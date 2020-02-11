@@ -43,7 +43,7 @@ console.table(volcanoeslist);
 volcanoeslist = listOfCounty("Greece")
 console.table(volcanoeslist);
 
-
+// find  volcanoes of the elevtion of the user input
 function countOfHighestPeak(elevate) {
     let height = 0;
     for (const vol of volcanoes) {
@@ -53,7 +53,7 @@ function countOfHighestPeak(elevate) {
     }
     return height;
 }
-
+// find volcanoes in country of the user input
 function listOfCounty(country) {
     let listOfVolcanoes = [];
     for (const vol of volcanoes) {
@@ -63,14 +63,22 @@ function listOfCounty(country) {
     }
     return listOfVolcanoes;
 }
+// total of deaths of all volcanoes 
 let totalDeaths = volcanoes.reduce ((total, v) => total + v.DEATHS, 0);
 console.table('number of deaths ' + totalDeaths);
 
+// total of elevation of all volcanoes
 let totalElevation = volcanoes.reduce ((total, v) => total + v.Elevation, 0);
 console.table('number of elevation ' + totalElevation);
 
+// average elevation of all volcanoes
 let average = (totalElevation / volcanoes.length);
-console.log(average);
+console.log(average.toFixed(0));
 
+// average deaths of all volcanoes
 average = (totalDeaths / volcanoes.length);
-console.log(average);
+console.log(average.toFixed(0));
+
+let arrVol = [ 'V', 'o', 'l', 'c', 'a', 'n', 'o', 'e', 's'];
+let bigVol = arrVol.reduce((temp, s) => temp + s);
+console.log(bigVol);
